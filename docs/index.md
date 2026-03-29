@@ -1,5 +1,5 @@
 ---
-title: "DocsGo - Go语言Markdown文档服务器"
+title: "DocsGo"
 description: "基于Go语言的实时文档渲染服务，支持Markdown和HTML，无需编译，即写即看"
 keywords: "Go文档生成器,Markdown服务器,文档管理系统,知识库工具,技术文档平台,实时预览,静态网站生成器替代品"
 order: 1

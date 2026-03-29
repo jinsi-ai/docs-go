@@ -16,6 +16,7 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: #f9fafb;
+    overscroll-behavior: none; /* 禁用滚动到边界时的弹性效果，避免页面弹动 */
 }
 
 /* 侧边栏样式 */

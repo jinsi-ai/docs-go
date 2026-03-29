@@ -38,3 +38,4 @@ data/search.db
 # Build output
 dist/
 build/
+bin/
