@@ -31,7 +31,6 @@ Thumbs.db
 # Project specific
 data/
 !data/.env.example
-docs/
 !docs/.gitkeep
 *.db
 *.log
