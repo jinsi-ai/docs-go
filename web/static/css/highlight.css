@@ -1,0 +1,89 @@
+/* 代码高亮基础样式 */
+pre {
+    overflow-x: auto;
+    padding: 1em;
+    border-radius: 4px;
+    background-color: #ffffff;
+    border: 1px solid #e1e4e8;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 0.9em;
+    line-height: 1.5;
+}
+
+code {
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    background-color: #f6f8fa;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+
+pre code {
+    background: none;
+    padding: 0;
+    border-radius: 0;
+}
+
+/* Chroma语法高亮颜色主题 - 调整为浅色背景深色文字 */
+.hljs {
+    color: #333333;
+    background: #ffffff;
+}
+
+.hljs-keyword, .hljs-selector-tag, .hljs-subst {
+    color: #d73a49;
+}
+
+.hljs-string, .hljs-attr, .hljs-symbol, .hljs-bullet, .hljs-addition {
+    color: #032f62;
+}
+
+.hljs-title, .hljs-section, .hljs-attribute {
+    color: #6f42c1;
+}
+
+.hljs-variable, .hljs-template-variable {
+    color: #e36209;
+}
+
+.hljs-comment, .hljs-quote, .hljs-deletion {
+    color: #6a737d;
+}
+
+.hljs-number, .hljs-regexp, .hljs-literal, .hljs-type {
+    color: #005cc5;
+}
+
+.hljs-built_in, .hljs-builtin-name {
+    color: #d73a49;
+}
+
+.hljs-meta {
+    color: #735c0f;
+}
+
+.hljs-emphasis {
+    font-style: italic;
+}
+
+.hljs-strong {
+    font-weight: bold;
+}
+
+/* 代码语言标识 */
+.language-go, .language-python, .language-javascript, .language-html, .language-css {
+    position: relative;
+}
+
+.language-go::before, .language-python::before, .language-javascript::before, 
+.language-html::before, .language-css::before {
+    content: attr(class);
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 0.75em;
+    color: #6a737d;
+    padding: 0.2em 0.5em;
+    border-bottom-left-radius: 4px;
+    background-color: rgba(246, 248, 250, 0.9);
+}
