@@ -20,8 +20,9 @@ func init() {
 func main() {
 	// 初始化配置
 	config := &config.Config{
-		DocsDir: "docs",
-		Port:    "8080",
+		DocsDir:  "docs",
+		Port:     "8080",
+		EmbedWeb: true, // 默认启用嵌入静态资源
 	}
 
 	// 先加载.env文件配置

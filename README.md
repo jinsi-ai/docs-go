@@ -52,7 +52,7 @@ PORT=8080
 DOCS_DIR=./docs
 SITE_TITLE=文档中心
 PASSWORD_SITE=          # 站点密码（可选）
-EMBED_WEB=false         # 嵌入静态资源
+EMBED_WEB=true          # 嵌入静态资源（默认true，开发时可设为false）
 ```
 
 或使用命令行参数（优先级更高）：
@@ -99,9 +99,9 @@ docs/                           # 文档目录
 
 ## 嵌入部署
 
-开发时：`EMBED_WEB=false`，实时修改前端文件
+默认：`EMBED_WEB=true`，所有资源已打包在二进制中
 
-部署时：设置 `EMBED_WEB=true`，重新编译后无需部署 `web/` 目录：
+开发时：设置 `EMBED_WEB=false`，从文件系统加载便于实时调试：
 
 ```bash
 # 启用嵌入并编译

@@ -50,8 +50,9 @@ func (c *Config) LoadEnv() error {
 	if siteTitle := os.Getenv("SITE_TITLE"); siteTitle != "" {
 		c.SiteTitle = siteTitle
 	}
-	if embedWeb := os.Getenv("EMBED_WEB"); embedWeb == "true" {
-		c.EmbedWeb = true
+	// EMBED_WEB 默认为 true，只有显式设置为 "false" 时才禁用
+	if embedWeb := os.Getenv("EMBED_WEB"); embedWeb == "false" {
+		c.EmbedWeb = false
 	}
 
 	return nil
@@ -102,9 +103,9 @@ func (c *Config) SaveEnv() {
 			log.Printf("警告: 创建.env文件失败: %v", err)
 		}
 		//写入配置到.env文件
-		embedWebStr := "false"
-		if c.EmbedWeb {
-			embedWebStr = "true"
+		embedWebStr := "true"
+		if !c.EmbedWeb {
+			embedWebStr = "false"
 		}
 		envContent := fmt.Sprintf(
 			"PORT=%s\nDOCS_DIR=%s\nPASSWORD_SITE=%s\nSITE_TITLE=%s\nEMBED_WEB=%s\n",

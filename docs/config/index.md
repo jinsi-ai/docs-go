@@ -21,8 +21,8 @@ PASSWORD_SITE=yourpassword
 # 网站标题
 SITE_TITLE=文档中心
 
-# 嵌入静态资源
-EMBED_WEB=false
+# 嵌入静态资源（默认true）
+EMBED_WEB=true
 
 # 自动索引
 AUTO_INDEX=false

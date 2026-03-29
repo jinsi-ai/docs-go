@@ -42,9 +42,9 @@ go vet ./...
 
 ## 嵌入资源开发
 
-开发时设置 `EMBED_WEB=false`，使用文件系统便于调试。
+默认 `EMBED_WEB=true`，所有资源已打包在二进制中。
 
-部署时设置 `EMBED_WEB=true`，将 `web/` 打包进二进制：
+开发时设置 `EMBED_WEB=false`，从文件系统加载便于实时调试：
 
 ```bash
 # 启用嵌入后重新编译
