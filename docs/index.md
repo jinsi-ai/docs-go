@@ -45,4 +45,4 @@ open http://localhost:8080
 
 GitHub: https://github.com/jinsi-ai/docs-go
 
-**License**: MIT | **Author**: 近思AI <bitepeng@qq.com>
+**License**: MIT | **Author**: 近思AI <309328809@qq.com>

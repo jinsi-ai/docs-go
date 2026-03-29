@@ -29,8 +29,8 @@ go.work
 Thumbs.db
 
 # Project specific
-data/
-!data/.env.example
+data/.env
+data/search.db
 !docs/.gitkeep
 *.db
 *.log
