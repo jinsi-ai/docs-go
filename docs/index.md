@@ -8,7 +8,7 @@ lang: "zh"
 ---
 
 <div align="center" style="margin: 30px 0;">
-  <img src="/static/logo.svg" alt="DocsGo Logo" width="120" height="120">
+  <img src="logo.svg" alt="DocsGo Logo" width="120" height="120">
   <h1>DocsGo</h1>
   <p style="font-size: 1.1em; color: #4b5563;">
     轻量级文档网站生成器

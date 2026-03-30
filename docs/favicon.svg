@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <linearGradient id="mainGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3a5f;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f172a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f97316;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ea580c;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- 背景 -->
+  <circle cx="50" cy="50" r="45" fill="url(#mainGrad)"/>
+  
+  <!-- 简化文档图标 -->
+  <path d="M30 30 L30 70 Q30 75 35 75 L48 75 L48 33 Q40 30 30 30" fill="#ffffff"/>
+  <path d="M52 33 L52 75 L65 75 Q70 75 70 70 L70 30 Q60 30 52 33" fill="#f1f5f9"/>
+  
+  <!-- 书脊 -->
+  <rect x="48" y="33" width="4" height="42" fill="#e2e8f0"/>
+  
+  <!-- 思考符号 -->
+  <circle cx="50" cy="22" r="5" fill="url(#accentGrad)"/>
+  <line x1="50" y1="12" x2="50" y2="7" stroke="url(#accentGrad)" stroke-width="2" stroke-linecap="round"/>
+  <line x1="40" y1="15" x2="36" y2="11" stroke="url(#accentGrad)" stroke-width="2" stroke-linecap="round"/>
+  <line x1="60" y1="15" x2="64" y2="11" stroke="url(#accentGrad)" stroke-width="2" stroke-linecap="round"/>
+</svg>
