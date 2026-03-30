@@ -1,93 +1,92 @@
 # AGENTS.md - AI Coding Agents Guide
 
-## 项目概述
-这是一个基于 Go 语言和 Gin 框架的轻量级文档网站生成器，支持 Markdown 和 HTML 文档的实时渲染与展示。
+## Project Overview
+基于 Go 语言和 Gin 框架的轻量级文档网站生成器，支持 Markdown 和 HTML 文档的实时渲染与展示，内置全文搜索功能。
 
-## 常用命令
+## Build Commands
 
-### 构建
 ```bash
-# 编译项目
-go build -o docs-go.exe
+# Compile
+ go build -o docs-go.exe
 
-# 运行项目
-go run main.go
+# Run
+ go run main.go
 
-# 带参数运行
-go run main.go -docs ./my-docs -port 8081
+# Run with args
+ go run main.go -docs ./my-docs -port 8081
+
+# Cross-platform build (see build.sh)
+ bash build.sh
 ```
 
-### 测试
+## Test Commands
+
 ```bash
-# 运行所有测试
-go test ./...
+# Run all tests
+ go test ./...
 
-# 运行单个包的测试
-go test ./pkg/doc
+# Run single package tests
+ go test ./pkg/doc
 
-# 运行单个测试函数
-go test -run TestFunctionName ./pkg/doc
+# Run single test function
+ go test -run TestFunctionName ./pkg/doc
 
-# 详细输出
-go test -v ./...
+# Verbose output
+ go test -v ./...
 
-# 带覆盖率测试
-go test -cover ./...
+# With coverage
+ go test -cover ./...
 ```
 
-### 代码检查
+## Lint/Format Commands
+
 ```bash
-# 格式化代码
-go fmt ./...
+# Format code
+ go fmt ./...
 
-# 代码审查
-go vet ./...
+# Vet code
+ go vet ./...
 
-# 整理依赖
-go mod tidy
+# Tidy dependencies
+ go mod tidy
 
-# 下载依赖
-go mod download
+# Download dependencies
+ go mod download
 ```
 
-## 代码风格指南
+## Code Style Guidelines
 
-### 导入顺序
-导入必须按以下顺序分组，每组之间空一行：
-1. 标准库
-2. 第三方库
-3. 项目内部包
+### Import Order
+1. Standard library
+2. Project internal packages
+3. Third-party packages
 
-示例：
 ```go
 import (
-    "fmt"
+    "html/template"
     "log"
-    "os"
-
-    "github.com/gin-gonic/gin"
 
     "docs-go/pkg/config"
     "docs-go/pkg/doc"
+
+    "github.com/gin-gonic/gin"
 )
 ```
 
-### 命名规范
-- **包名**: 小写，简短，避免下划线（如 `doc`, `auth`, `config`）
-- **文件名**: 小写，使用下划线分隔（如 `doctree.go`, `file_watcher.go`）
-- **结构体**: 大写驼峰（如 `DocTree`, `CookieManager`）
-- **接口**: 大写驼峰，通常以 `er` 结尾（如 `Reader`, `Handler`）
-- **函数**: 导出函数大写驼峰，私有函数小写驼峰
-- **变量**: 驼峰命名，布尔变量用 `is`/`has` 前缀
-- **常量**: 大写下划线（如 `CookieExpire`, `DefaultPort`）
+### Naming Conventions
+- **Packages**: lowercase, short (e.g., `doc`, `auth`, `config`)
+- **Files**: lowercase with underscores (e.g., `doctree.go`)
+- **Types/Structs**: PascalCase (e.g., `DocTree`, `DocHandler`)
+- **Interfaces**: PascalCase with `er` suffix (e.g., `Handler`, `Reader`)
+- **Functions**: PascalCase for exported, camelCase for private
+- **Variables**: camelCase, booleans use `is`/`has` prefix
+- **Constants**: UPPER_SNAKE_CASE
 
-### 注释规范
-- 所有导出元素必须有注释
-- 注释以被描述对象的名称开头
-- 使用中文注释
-- 函数注释说明功能和参数
+### Comments
+- All exported items must have comments
+- Comments start with the item name
+- Use Chinese for comments
 
-示例：
 ```go
 // DocTree 文档树管理结构体
 type DocTree struct {
@@ -98,22 +97,17 @@ type DocTree struct {
 
 // NewDocTree 创建新的文档树实例
 func NewDocTree(config *config.Config) *DocTree {
-    return &DocTree{
-        Config: config,
-    }
+    return &DocTree{Config: config}
 }
 ```
 
-### 错误处理
-- 错误尽早返回，避免深层嵌套
-- 使用 `fmt.Errorf` 包装错误，添加上下文
-- 日志记录使用 `log.Printf`
-- 关键错误使用 `log.Fatalf` 终止程序
+### Error Handling
+- Return errors early, avoid deep nesting
+- Use `log.Printf` for warnings, `log.Fatalf` for critical errors
+- Wrap errors with context using `fmt.Errorf`
 
-示例：
 ```go
 func (dt *DocTree) Init() error {
-    // 验证文档目录存在
     if err := dt.Config.Validate(); err != nil {
         return err
     }
@@ -121,8 +115,9 @@ func (dt *DocTree) Init() error {
 }
 ```
 
-### 结构体标签
-使用 json 标签进行序列化控制，小写字段名：
+### Struct Tags
+Use `json` tags with lowercase field names:
+
 ```go
 type DocNode struct {
     Name     string     `json:"name"`
@@ -132,12 +127,11 @@ type DocNode struct {
 }
 ```
 
-### 并发安全
-- 共享状态使用 `sync.RWMutex` 保护
-- 读操作使用 `RLock`，写操作使用 `Lock`
-- 使用 `defer` 确保解锁
+### Concurrency
+- Use `sync.RWMutex` for shared state
+- Use `RLock` for reads, `Lock` for writes
+- Always use `defer` to unlock
 
-示例：
 ```go
 func (dt *DocTree) GetActiveTree(activePath string) *DocNode {
     dt.Mutex.RLock()
@@ -146,34 +140,46 @@ func (dt *DocTree) GetActiveTree(activePath string) *DocNode {
 }
 ```
 
-## 项目结构
+## Project Structure
+
 ```
 docs-go/
-├── app/              # 应用层代码
-│   ├── app.go        # 路由设置和初始化
-│   └── docs/         # 文档处理模块
-├── pkg/              # 核心包模块
-│   ├── auth/         # 认证相关
-│   ├── config/       # 配置管理
-│   ├── doc/          # 文档处理核心
-│   ├── httpd/        # HTTP服务器
-│   ├── resp/         # 响应处理
-│   └── watcher/      # 文件监控
-├── web/              # 前端资源
-│   ├── static/       # 静态文件
-│   └── views/        # HTML模板
-├── main.go           # 程序入口
-└── go.mod            # Go模块定义
+├── app/              # Application layer
+│   ├── app.go        # Route setup
+│   ├── docs/         # Document handlers
+│   └── search/       # Search handlers
+├── pkg/              # Core packages
+│   ├── auth/         # Authentication
+│   ├── config/       # Configuration
+│   ├── doc/          # Document processing
+│   ├── httpd/        # HTTP server
+│   ├── resp/         # Response utilities
+│   ├── search/       # Search engine
+│   ├── watcher/      # File watching
+│   └── webfs/        # Embedded web assets
+├── web/              # Frontend assets
+│   ├── static/       # Static files
+│   └── views/        # HTML templates
+├── data/             # Data files (.env, search.db)
+├── docs/             # Default docs directory
+├── main.go           # Entry point
+└── go.mod            # Go module
 ```
 
-## 配置说明
-- 配置文件位于 `data/.env`
-- 支持命令行参数覆盖环境变量
-- 参数优先级: 命令行 > 环境变量 > 默认值
+## Configuration
+- Config file: `data/.env`
+- Priority: CLI args > env vars > defaults
+- Key settings: `DOCS_DIR`, `PORT`, `PASSWORD_SITE`, `SITE_TITLE`
 
-## 注意事项
-1. 使用 `gofmt` 格式化所有代码
-2. 确保 `go mod tidy` 后提交
-3. 文档目录默认是 `docs`，可自定义
-4. 文件监控使用 `fsnotify`，修改文档后自动刷新
-5. 支持密码保护，通过 frontmatter 配置
+## Key Dependencies
+- `github.com/gin-gonic/gin` - Web framework
+- `github.com/fsnotify/fsnotify` - File watching
+- `github.com/yuin/goldmark` - Markdown parsing
+- `github.com/mattn/go-sqlite3` - SQLite for search
+
+## Notes
+1. Run `go fmt ./...` before committing
+2. Run `go mod tidy` after adding/removing imports
+3. Default docs dir is `docs/`, customizable via flag
+4. File watcher auto-refreshes on document changes
+5. Password protection via frontmatter (`password:` field)
