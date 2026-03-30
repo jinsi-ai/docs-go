@@ -1,6 +1,6 @@
 ---
-title: "DocsGo"
-title_dir: "首页"
+title: "首页"
+title_dir: "中文文档"
 description: "基于Go语言的轻量级文档网站生成器，支持Markdown和HTML，无需编译，即写即看"
 keywords: "Go文档生成器,Markdown服务器,文档管理系统,知识库工具,技术文档平台"
 order: 1
@@ -84,7 +84,7 @@ chmod +x docs-go-linux-amd64
 
 ## 开源协议
 
-[MIT License](https://github.com/jinsi-ai/docs-go/blob/main/LICENSE) © 2025 [近思AI](./brand)
+[MIT License](https://github.com/jinsi-ai/docs-go/blob/main/LICENSE) © 2026 [近思AI](./brand)
 
 ---
 

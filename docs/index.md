@@ -1,6 +1,5 @@
 ---
-title: "DocsGo - 近思AI出品"
-title_dir: "首页"
+title: "DocsGo"
 description: "基于Go语言的轻量级文档网站生成器，由近思AI打造。近思切问，AI务实。"
 keywords: "DocsGo, 近思AI, Go文档生成器, Markdown服务器, 文档管理"
 order: 1
@@ -108,7 +107,7 @@ chmod +x docs-go-linux-amd64
 
 ## 开源协议
 
-[MIT License](https://github.com/jinsi-ai/docs-go/blob/main/LICENSE) © 2025 近思AI
+[MIT License](https://github.com/jinsi-ai/docs-go/blob/main/LICENSE) © 2026 近思AI
 
 - **GitHub**: [github.com/jinsi-ai/docs-go](https://github.com/jinsi-ai/docs-go)
 - **问题反馈**: [GitHub Issues](https://github.com/jinsi-ai/docs-go/issues)
@@ -128,6 +127,6 @@ chmod +x docs-go-linux-amd64
     <a href="./en/" style="color: #fff;">English</a>
   </p>
   <p style="font-size: 0.8em; opacity: 0.6; margin-top: 20px;">
-    © 2025 近思AI 版权所有 | © 2025 JinSi AI. All rights reserved.
+    © 2026 近思AI 版权所有 | © 2026 JinSi AI. All rights reserved.
   </p>
 </div>

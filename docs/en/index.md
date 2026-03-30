@@ -1,9 +1,9 @@
 ---
 title: "DocsGo"
-title_dir: "Documentation"
+title_dir: "EngLish"
 description: "Lightweight documentation site generator based on Go, supporting Markdown and HTML, no compilation needed"
 keywords: "Go documentation generator, Markdown server, documentation management system, knowledge base tool"
-order: 1
+order: 2
 lang: "en"
 i18n:
   lang: "English"
@@ -84,7 +84,7 @@ chmod +x docs-go-linux-amd64
 
 ## License
 
-[MIT License](https://github.com/jinsi-ai/docs-go/blob/main/LICENSE) © 2025 [JinSi AI](./brand)
+[MIT License](https://github.com/jinsi-ai/docs-go/blob/main/LICENSE) © 2026 [JinSi AI](./brand)
 
 ---
 
