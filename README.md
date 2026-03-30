@@ -10,7 +10,8 @@
 
 **DocsGo** is a high-performance **Markdown documentation server** built with **Go**, featuring real-time rendering, full-text search, and access control. A lightweight alternative to static site generators like Hugo and Jekyll.
 
-> 近思切问，AI务实 | NearThink AI, Pragmatic Tech
+<div align="center"> <a href="README_CN.md">中文文档</a> | English Documentation </div>
+<div align="center"><em> 近思AI（JinSi-AI）开源项目  | 近思切问，AI务实 | NearThink AI, Pragmatic Tech</em> </div>
 
 ## Why DocsGo?
 
@@ -199,9 +200,7 @@ In the wave of AI, some chase trends, some sell anxiety, and some speak in abstr
 
 This project is built with the JinSi AI philosophy: **pragmatic tools for real problems**. We believe good documentation tools should be simple, fast, and just work—so you can focus on what matters: creating great content.
 
-**近思AI，解决真问题**  
-**JinSi AI—Solving Real Problems**
-
 ---
 
-[中文文档](README_CN.md) | English Documentation
+**近思AI，解决真问题**  
+**JinSi AI—Solving Real Problems**
