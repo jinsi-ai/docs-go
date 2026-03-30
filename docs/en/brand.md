@@ -13,7 +13,7 @@ i18n:
 # About JinSi AI
 
 <div align="center" style="margin: 30px 0;">
-  <img src="/static/logo.svg" alt="JinSi AI" width="120" height="120">
+  <img src="logo.svg" alt="JinSi AI" width="120" height="120">
   <h2>近思AI | JinSi AI</h2>
   <p style="font-size: 1.3em; color: #1e3a5f; font-weight: 600;">
     近思切问，AI务实<br>

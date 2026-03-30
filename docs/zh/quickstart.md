@@ -82,6 +82,8 @@ mkdir -p docs
 
 ### 2. 创建第一篇文档
 
+**方式一：使用 Markdown（推荐）**
+
 创建 `docs/index.md`：
 
 ```markdown
@@ -100,6 +102,30 @@ order: 1
 - 全文搜索
 - 密码保护
 ```
+
+**方式二：使用 HTML**
+
+DocsGo 也支持直接放置 HTML 文件：
+
+```bash
+cat > docs/index.html << 'EOF'
+<!DOCTYPE html>
+<html>
+<head>
+    <title>我的文档</title>
+</head>
+<body>
+    <h1>欢迎使用 DocsGo</h1>
+    <p>这是一个 HTML 文档示例。</p>
+</body>
+</html>
+EOF
+```
+
+**文件优先级**：当存在同名文件时，按以下顺序优先：
+1. `index.html`
+2. `README.md`
+3. `index.md`
 
 ### 3. 启动服务
 

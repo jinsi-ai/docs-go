@@ -82,6 +82,8 @@ mkdir -p docs
 
 ### 2. Create Your First Document
 
+**Option A: Using Markdown (Recommended)**
+
 Create `docs/index.md`:
 
 ```markdown
@@ -100,6 +102,30 @@ This is your first document!
 - Full-text search
 - Password protection
 ```
+
+**Option B: Using HTML**
+
+DocsGo also supports plain HTML files:
+
+```bash
+cat > docs/index.html << 'EOF'
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Documentation</title>
+</head>
+<body>
+    <h1>Welcome to DocsGo</h1>
+    <p>This is an HTML document example.</p>
+</body>
+</html>
+EOF
+```
+
+**File Priority**: When multiple files exist with the same name, the priority is:
+1. `index.html`
+2. `README.md`
+3. `index.md`
 
 ### 3. Start the Server
 

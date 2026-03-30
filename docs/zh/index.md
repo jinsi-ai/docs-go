@@ -53,6 +53,12 @@ i18n:
 - **代码高亮**：支持 100+ 编程语言的语法高亮
 - **目录导航**：自动生成文档树，支持自定义排序
 
+### 📝 多格式支持
+- **Markdown**：完整支持 GitHub Flavored Markdown
+- **HTML**：直接放置 `.html` 文件，自动渲染
+- **智能识别**：自动识别 `index.html` / `index.md` / `README.md` 优先级
+- **混合使用**：同一站点可同时使用 Markdown 和 HTML
+
 ## 文档导航
 
 - [快速入门](./quickstart) - 5分钟快速上手

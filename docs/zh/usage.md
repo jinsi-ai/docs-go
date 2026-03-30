@@ -154,6 +154,60 @@ PASSWORD_SITE=YourPassword
 ---
 password: "DocumentSecret"
 ---
+
+## HTML 文件支持
+
+除了 Markdown，DocsGo 也支持直接使用 HTML 文件：
+
+```bash
+# 创建 HTML 文件
+cat > docs/custom-page.html << 'EOF'
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义页面</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        h1 { color: #1e3a5f; }
+    </style>
+</head>
+<body>
+    <h1>这是一个自定义 HTML 页面</h1>
+    <p>你可以使用任何 HTML、CSS 和 JavaScript。</p>
+</body>
+</html>
+EOF
+```
+
+### 使用场景
+
+- 复杂的交互式文档
+- 需要自定义样式的页面
+- 嵌入第三方组件
+- 纯静态页面
+
+### 注意事项
+
+- HTML 文件不会自动生成目录导航
+- HTML 内容不参与全文搜索
+- 建议与 Markdown 混合使用
+
+### 文件优先级
+
+同一目录下多个入口文件时，访问优先级：
+
+1. `index.html` - 最高优先级
+2. `README.md` - 次之
+3. `index.md` - 再次之
+
+示例：
+```
+docs/
+├── guide/
+│   ├── index.html    ← 访问 /guide/ 时显示这个
+│   ├── README.md     ← 会被忽略
+│   └── index.md      ← 会被忽略
 ```
 
 ## 最佳实践

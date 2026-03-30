@@ -154,6 +154,60 @@ In document frontmatter:
 ---
 password: "DocumentSecret"
 ---
+
+## HTML File Support
+
+In addition to Markdown, DocsGo also supports plain HTML files:
+
+```bash
+# Create an HTML file
+cat > docs/custom-page.html << 'EOF'
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Custom Page</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        h1 { color: #1e3a5f; }
+    </style>
+</head>
+<body>
+    <h1>This is a Custom HTML Page</h1>
+    <p>You can use any HTML, CSS, and JavaScript.</p>
+</body>
+</html>
+EOF
+```
+
+### Use Cases
+
+- Complex interactive documentation
+- Pages requiring custom styling
+- Embedding third-party components
+- Pure static pages
+
+### Limitations
+
+- HTML files don't generate automatic table of contents
+- HTML content is not included in full-text search
+- Recommended to mix with Markdown for best results
+
+### File Priority
+
+When multiple entry files exist in the same directory, access priority is:
+
+1. `index.html` - Highest priority
+2. `README.md` - Secondary
+3. `index.md` - Lowest
+
+Example:
+```
+docs/
+├── guide/
+│   ├── index.html    ← Displayed when accessing /guide/
+│   ├── README.md     ← Ignored
+│   └── index.md      ← Ignored
 ```
 
 ## Best Practices
